@@ -30,7 +30,16 @@ class ListTortillas extends Component {
       })
       .catch(err => console.log(err));
   }
-  
+  // handleEdit = (id) => {
+  //   <Link to={/id/edit}></Link>
+  //   // tortillaService.editTortilla(id)
+  //   //   .then(result => {
+  //   //     console.log(result);
+  //   //     this.getTortillaList();
+  //   //   })
+  //   //   .catch(err => console.log(err));
+  // }
+
   render() {
     const {data} = this.state;
     return (
@@ -41,6 +50,7 @@ class ListTortillas extends Component {
               key={tortilla._id}
               data={tortilla}
               onDelete={this.handleDelete}
+              onEdit={this.handleEdit}
             />
           ))}
         </ul>

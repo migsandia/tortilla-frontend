@@ -7,6 +7,10 @@ class TortillaService {
     });
   }
 
+  getById(id) {
+    return this.api.get(`/${id}`)
+      .then(({data}) => data)
+  }
   getAll() {
     return this.api.get('/')
       .then(({data}) => data)
@@ -19,6 +23,11 @@ class TortillaService {
 
   deleteTortilla(id) {
     return this.api.delete(`/${id}`)
+      .then(({data}) => data)
+  }
+
+  editTortilla(body, id) {
+    return this.api.put(`/${id}`, body)
       .then(({data}) => data)
   }
 
